@@ -1,0 +1,713 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version V-2023.12-SP5 for linux64 - Jul 16, 2024 
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Fri Sep 26 13:47:47 2025
+Hostname:           coe-ee-cad37.sjsuad.sjsu.edu
+CPU Model:          Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz
+CPU Details:        Cores = 16 : Sockets = 1 : Cache Size = 16384 KB : Freq = 0.80 GHz
+OS:                 Linux 5.14.0-570.35.1.el9_6.x86_64
+RAM:                 15 GB (Free   9 GB)
+Swap:                 7 GB (Free   7 GB)
+Work Filesystem:    /home/015698059@SJSUAD.SJSU.EDU mounted to coe-ee-pool.sjsuad.sjsu.edu:/export/users/015698059
+Tmp Filesystem:     / mounted to /dev/mapper/rhel-root
+Work Disk:          963 GB (Free 890 GB)
+Tmp Disk:            69 GB (Free  54 GB)
+
+CPU Load: 0%, Ram Free: 9 GB, Swap Free: 7 GB, Work Disk Free: 890 GB, Tmp Disk Free: 54 GB
+set link_library {/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db /apps/synopsys/PrimeTimeNew/pts/Q-2019.12/libraries/syn/dw_foundation.sldb}
+/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db /apps/synopsys/PrimeTimeNew/pts/Q-2019.12/libraries/syn/dw_foundation.sldb
+set target_library {/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db}
+/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db
+suppress_message { UID-401 VER-130 }
+read_sverilog fpm.sv
+Loading db file '/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db'
+Loading db file '/apps/synopsys/PrimeTimeNew/pts/Q-2019.12/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/dc_compiler_2023_V/syn/V-2023.12-SP5/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/dc_compiler_2023_V/syn/V-2023.12-SP5/libraries/syn/standard.sldb'
+  Loading link library 'gscl45nm'
+  Loading link library 'gtech'
+Loading sverilog file '/home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm.sv
+Warning:  /home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm.sv:126: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine fpm line 28 in file
+		'/home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   stage1_zero_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  stage1_valid_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    stage1_s_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    stage1_ea_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    stage1_eb_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    stage1_ma_reg    | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    stage1_mb_reg    | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpm line 68 in file
+		'/home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   stage2_zero_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  stage2_valid_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    stage2_s_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    stage2_ea_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    stage2_eb_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   stage2_prod_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine fpm line 92 in file
+		'/home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Z_reg        | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pushout_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm.db:fpm'
+Loaded 1 design.
+Current design is 'fpm'.
+fpm
+current_design fpm
+Current design is 'fpm'.
+{fpm}
+create_clock clk -name clk -period 3.500
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clk
+1
+set_propagated_clock clk
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clk [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port reset]]
+{A[11] A[10] A[9] A[8] A[7] A[6] A[5] A[4] A[3] A[2] A[1] A[0] B[11] B[10] B[9] B[8] B[7] B[6] B[5] B[4] B[3] B[2] B[1] B[0] pushin}
+set_driving_cell -lib_cell NAND2X1 $all_inputs_wo_rst_clk
+1
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+1
+set_output_delay 0.6 -clock clk [all_outputs]
+1
+set_fix_hold [ get_clocks clk ]
+1
+set_output_delay 0.3 -clock clk [all_outputs]
+1
+set_max_delay 3.500 -from [all_inputs] -to [all_outputs]
+1
+compile_ultra
+Information: Performing leakage power optimization. (PWR-850)
+CPU Load: 0%, Ram Free: 9 GB, Swap Free: 7 GB, Work Disk Free: 890 GB, Tmp Disk Free: 54 GB
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | V-2023.12-DWBB_202312.5 |     *     |
+| Licensed DW Building Blocks        | Q-2019.12-DWBB_201912.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Command Line | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 120                                    |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 65                                     |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 13                                     |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'fpm'
+
+Loaded alib file './alib-52/gscl45nm.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+CPU Load: 0%, Ram Free: 8 GB, Swap Free: 7 GB, Work Disk Free: 890 GB, Tmp Disk Free: 54 GB
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'fpm'
+Information: Added key list 'DesignWare' to design 'fpm'. (DDB-72)
+Information: The register 'stage1_eb_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'stage1_ea_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'stage2_ea_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'stage2_eb_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: In design 'fpm', the register 'stage1_mb_reg[6]' is removed because it is merged to 'stage1_ma_reg[6]'. (OPT-1215)
+ Implement Synthetic for 'fpm'.
+CPU Load: 0%, Ram Free: 8 GB, Swap Free: 7 GB, Work Disk Free: 890 GB, Tmp Disk Free: 54 GB
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: There is no timing violation in design fpm. Delay-based auto_ungroup will not be performed. (OPT-780)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:01    1638.8      0.00       0.0     853.4                           9640.3604      0.00  
+    0:00:01    1638.8      0.00       0.0     853.4                           9640.3604      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:00:01    1638.8      0.00       0.0     853.4                           9640.3604      0.00  
+    0:00:01    1638.8      0.00       0.0     853.4                           9640.3604      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:01    1552.4      0.00       0.0     829.7                           9016.4326      0.00  
+    0:00:01    1552.4      0.00       0.0     829.7                           9016.4326      0.00  
+    0:00:01    1552.4      0.00       0.0     829.7                           9016.4326      0.00  
+    0:00:01    1552.4      0.00       0.0     829.7                           9016.4326      0.00  
+    0:00:01    1552.4      0.00       0.0     829.7                           9016.4326      0.00  
+    0:00:01    1552.4      0.00       0.0     829.7                           9016.4326      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:01    1541.2      0.00       0.0     829.7                           9002.4990      0.00  
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:00:01    2035.4      0.00       0.0     198.6                           11871.7031      0.00  
+    0:00:01    2035.4      0.00       0.0     198.6                           11871.7031      0.00  
+    0:00:01    2035.4      0.00       0.0     198.6                           11871.7031      0.00  
+    0:00:01    2035.4      0.00       0.0     198.6                           11871.7031      0.00  
+    0:00:01    2035.4      0.00       0.0     198.6                           11871.7031      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:01    2032.5      0.00       0.0     198.9                           11818.0381      0.00  
+    0:00:02    2175.2      0.00       0.0     175.2                           13310.1719      0.00  
+    0:00:02    2175.2      0.00       0.0     175.2                           13310.1719      0.00  
+    0:00:02    2175.2      0.00       0.0     175.2                           13310.1719      0.00  
+    0:00:02    2175.2      0.00       0.0     175.2                           13310.1719      0.00  
+    0:00:02    2175.2      0.00       0.0     175.2                           13310.1719      0.00  
+    0:00:02    2175.2      0.00       0.0     175.2                           13310.1719      0.00  
+CPU Load: 0%, Ram Free: 8 GB, Swap Free: 7 GB, Work Disk Free: 890 GB, Tmp Disk Free: 54 GB
+Loading db file '/home/morris/FreePDK45/osu_soc/lib/files/gscl45nm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+CPU Load: 0%, Ram Free: 8 GB, Swap Free: 7 GB, Work Disk Free: 890 GB, Tmp Disk Free: 54 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+create_clock clk -name clk -period 5.000
+1
+update_timing
+Information: Updating design information... (UID-85)
+1
+report_timing -max_paths 5
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : fpm
+Version: V-2023.12-SP5
+Date   : Fri Sep 26 13:47:50 2025
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: stage1_mb_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: stage2_prod_reg[13]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  stage1_mb_reg[2]/CLK (DFFSR)             0.00       0.00 r
+  stage1_mb_reg[2]/Q (DFFSR)               0.11       0.11 f
+  U579/Y (BUFX2)                           0.04       0.16 f
+  U645/Y (INVX1)                           0.04       0.20 r
+  U387/Y (AND2X1)                          0.03       0.23 r
+  U388/Y (INVX1)                           0.02       0.25 f
+  U701/Y (AOI22X1)                         0.03       0.28 r
+  U336/Y (BUFX2)                           0.03       0.31 r
+  U334/Y (INVX1)                           0.01       0.33 f
+  U335/Y (INVX1)                           0.00       0.33 r
+  U420/Y (AND2X1)                          0.04       0.37 r
+  U421/Y (INVX1)                           0.03       0.40 f
+  U703/Y (AOI21X1)                         0.04       0.43 r
+  U353/Y (BUFX2)                           0.03       0.47 r
+  U328/Y (AND2X1)                          0.04       0.51 r
+  U329/Y (INVX1)                           0.02       0.53 f
+  U326/Y (INVX1)                           0.00       0.52 r
+  U327/Y (INVX1)                           0.01       0.54 f
+  U704/Y (OAI21X1)                         0.03       0.57 r
+  U385/Y (AND2X1)                          0.04       0.60 r
+  U386/Y (INVX1)                           0.02       0.62 f
+  U706/Y (NAND3X1)                         0.03       0.65 r
+  U325/Y (BUFX2)                           0.03       0.69 r
+  U323/Y (INVX1)                           0.01       0.70 f
+  U324/Y (INVX1)                           0.00       0.70 r
+  U707/Y (OAI21X1)                         0.01       0.71 f
+  U709/Y (OAI21X1)                         0.07       0.79 r
+  intadd_4/U2/YC (FAX1)                    0.08       0.87 r
+  U374/Y (OR2X1)                           0.05       0.91 r
+  U375/Y (INVX1)                           0.02       0.93 f
+  U713/Y (OAI21X1)                         0.08       1.01 r
+  intadd_1/U3/YC (FAX1)                    0.08       1.09 r
+  intadd_1/U2/YC (FAX1)                    0.07       1.16 r
+  U376/Y (OR2X1)                           0.05       1.21 r
+  U377/Y (INVX1)                           0.02       1.23 f
+  U715/Y (OAI21X1)                         0.08       1.30 r
+  intadd_2/U2/YC (FAX1)                    0.07       1.37 r
+  U718/Y (INVX1)                           0.03       1.40 f
+  U720/Y (AOI22X1)                         0.03       1.43 r
+  U281/Y (BUFX2)                           0.03       1.47 r
+  U279/Y (INVX1)                           0.01       1.48 f
+  U280/Y (INVX1)                           0.00       1.48 r
+  stage2_prod_reg[13]/D (DFFSR)            0.00       1.48 r
+  data arrival time                                   1.48
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  stage2_prod_reg[13]/CLK (DFFSR)          0.00       4.75 r
+  library setup time                      -0.07       4.68
+  data required time                                  4.68
+  -----------------------------------------------------------
+  data required time                                  4.68
+  data arrival time                                  -1.48
+  -----------------------------------------------------------
+  slack (MET)                                         3.20
+
+
+  Startpoint: stage1_mb_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: stage2_prod_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  stage1_mb_reg[2]/CLK (DFFSR)             0.00       0.00 r
+  stage1_mb_reg[2]/Q (DFFSR)               0.11       0.11 f
+  U579/Y (BUFX2)                           0.04       0.16 f
+  U645/Y (INVX1)                           0.04       0.20 r
+  U387/Y (AND2X1)                          0.03       0.23 r
+  U388/Y (INVX1)                           0.02       0.25 f
+  U701/Y (AOI22X1)                         0.03       0.28 r
+  U336/Y (BUFX2)                           0.03       0.31 r
+  U334/Y (INVX1)                           0.01       0.33 f
+  U335/Y (INVX1)                           0.00       0.33 r
+  U420/Y (AND2X1)                          0.04       0.37 r
+  U421/Y (INVX1)                           0.03       0.40 f
+  U703/Y (AOI21X1)                         0.04       0.43 r
+  U353/Y (BUFX2)                           0.03       0.47 r
+  U328/Y (AND2X1)                          0.04       0.51 r
+  U329/Y (INVX1)                           0.02       0.53 f
+  U326/Y (INVX1)                           0.00       0.52 r
+  U327/Y (INVX1)                           0.01       0.54 f
+  U704/Y (OAI21X1)                         0.03       0.57 r
+  U385/Y (AND2X1)                          0.04       0.60 r
+  U386/Y (INVX1)                           0.02       0.62 f
+  U706/Y (NAND3X1)                         0.03       0.65 r
+  U325/Y (BUFX2)                           0.03       0.69 r
+  U323/Y (INVX1)                           0.01       0.70 f
+  U324/Y (INVX1)                           0.00       0.70 r
+  U707/Y (OAI21X1)                         0.01       0.71 f
+  U709/Y (OAI21X1)                         0.07       0.79 r
+  intadd_4/U2/YC (FAX1)                    0.08       0.87 r
+  U374/Y (OR2X1)                           0.05       0.91 r
+  U375/Y (INVX1)                           0.02       0.93 f
+  U713/Y (OAI21X1)                         0.08       1.01 r
+  intadd_1/U3/YC (FAX1)                    0.08       1.09 r
+  intadd_1/U2/YC (FAX1)                    0.07       1.16 r
+  U376/Y (OR2X1)                           0.05       1.21 r
+  U377/Y (INVX1)                           0.02       1.23 f
+  U715/Y (OAI21X1)                         0.08       1.30 r
+  intadd_2/U2/YC (FAX1)                    0.07       1.37 r
+  U721/Y (MUX2X1)                          0.02       1.39 f
+  U723/Y (AOI22X1)                         0.04       1.43 r
+  U284/Y (BUFX2)                           0.03       1.47 r
+  U282/Y (INVX1)                           0.01       1.48 f
+  U283/Y (INVX1)                           0.00       1.48 r
+  stage2_prod_reg[12]/D (DFFSR)            0.00       1.48 r
+  data arrival time                                   1.48
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  stage2_prod_reg[12]/CLK (DFFSR)          0.00       4.75 r
+  library setup time                      -0.07       4.68
+  data required time                                  4.68
+  -----------------------------------------------------------
+  data required time                                  4.68
+  data arrival time                                  -1.48
+  -----------------------------------------------------------
+  slack (MET)                                         3.20
+
+
+  Startpoint: stage1_mb_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: stage2_prod_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  stage1_mb_reg[2]/CLK (DFFSR)             0.00       0.00 r
+  stage1_mb_reg[2]/Q (DFFSR)               0.11       0.11 f
+  U579/Y (BUFX2)                           0.04       0.16 f
+  U645/Y (INVX1)                           0.04       0.20 r
+  U387/Y (AND2X1)                          0.03       0.23 r
+  U388/Y (INVX1)                           0.02       0.25 f
+  U701/Y (AOI22X1)                         0.03       0.28 r
+  U336/Y (BUFX2)                           0.03       0.31 r
+  U334/Y (INVX1)                           0.01       0.33 f
+  U335/Y (INVX1)                           0.00       0.33 r
+  U420/Y (AND2X1)                          0.04       0.37 r
+  U421/Y (INVX1)                           0.03       0.40 f
+  U703/Y (AOI21X1)                         0.04       0.43 r
+  U353/Y (BUFX2)                           0.03       0.47 r
+  U328/Y (AND2X1)                          0.04       0.51 r
+  U329/Y (INVX1)                           0.02       0.53 f
+  U326/Y (INVX1)                           0.00       0.52 r
+  U327/Y (INVX1)                           0.01       0.54 f
+  U704/Y (OAI21X1)                         0.03       0.57 r
+  U385/Y (AND2X1)                          0.04       0.60 r
+  U386/Y (INVX1)                           0.02       0.62 f
+  U706/Y (NAND3X1)                         0.03       0.65 r
+  U325/Y (BUFX2)                           0.03       0.69 r
+  U323/Y (INVX1)                           0.01       0.70 f
+  U324/Y (INVX1)                           0.00       0.70 r
+  U707/Y (OAI21X1)                         0.01       0.71 f
+  U709/Y (OAI21X1)                         0.07       0.79 r
+  intadd_4/U2/YC (FAX1)                    0.08       0.87 r
+  U374/Y (OR2X1)                           0.05       0.91 r
+  U375/Y (INVX1)                           0.02       0.93 f
+  U713/Y (OAI21X1)                         0.08       1.01 r
+  intadd_1/U3/YC (FAX1)                    0.08       1.09 r
+  intadd_1/U2/YC (FAX1)                    0.07       1.16 r
+  U376/Y (OR2X1)                           0.05       1.21 r
+  U377/Y (INVX1)                           0.02       1.23 f
+  U715/Y (OAI21X1)                         0.08       1.30 r
+  intadd_2/U2/YS (FAX1)                    0.09       1.39 r
+  U724/Y (AOI22X1)                         0.03       1.42 f
+  U177/Y (BUFX2)                           0.04       1.46 f
+  U725/Y (INVX1)                           0.00       1.46 r
+  stage2_prod_reg[11]/D (DFFSR)            0.00       1.46 r
+  data arrival time                                   1.46
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  stage2_prod_reg[11]/CLK (DFFSR)          0.00       4.75 r
+  library setup time                      -0.07       4.68
+  data required time                                  4.68
+  -----------------------------------------------------------
+  data required time                                  4.68
+  data arrival time                                  -1.46
+  -----------------------------------------------------------
+  slack (MET)                                         3.22
+
+
+  Startpoint: stage1_mb_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: stage2_prod_reg[10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  stage1_mb_reg[2]/CLK (DFFSR)             0.00       0.00 r
+  stage1_mb_reg[2]/Q (DFFSR)               0.11       0.11 f
+  U579/Y (BUFX2)                           0.04       0.16 f
+  U645/Y (INVX1)                           0.04       0.20 r
+  U387/Y (AND2X1)                          0.03       0.23 r
+  U388/Y (INVX1)                           0.02       0.25 f
+  U701/Y (AOI22X1)                         0.03       0.28 r
+  U336/Y (BUFX2)                           0.03       0.31 r
+  U334/Y (INVX1)                           0.01       0.33 f
+  U335/Y (INVX1)                           0.00       0.33 r
+  U420/Y (AND2X1)                          0.04       0.37 r
+  U421/Y (INVX1)                           0.03       0.40 f
+  U703/Y (AOI21X1)                         0.04       0.43 r
+  U353/Y (BUFX2)                           0.03       0.47 r
+  U328/Y (AND2X1)                          0.04       0.51 r
+  U329/Y (INVX1)                           0.02       0.53 f
+  U326/Y (INVX1)                           0.00       0.52 r
+  U327/Y (INVX1)                           0.01       0.54 f
+  U704/Y (OAI21X1)                         0.03       0.57 r
+  U385/Y (AND2X1)                          0.04       0.60 r
+  U386/Y (INVX1)                           0.02       0.62 f
+  U706/Y (NAND3X1)                         0.03       0.65 r
+  U325/Y (BUFX2)                           0.03       0.69 r
+  U323/Y (INVX1)                           0.01       0.70 f
+  U324/Y (INVX1)                           0.00       0.70 r
+  U707/Y (OAI21X1)                         0.01       0.71 f
+  U709/Y (OAI21X1)                         0.07       0.79 r
+  intadd_4/U2/YC (FAX1)                    0.08       0.87 r
+  U374/Y (OR2X1)                           0.05       0.91 r
+  U375/Y (INVX1)                           0.02       0.93 f
+  U713/Y (OAI21X1)                         0.08       1.01 r
+  intadd_1/U3/YC (FAX1)                    0.08       1.09 r
+  intadd_1/U2/YC (FAX1)                    0.07       1.16 r
+  U540/Y (AND2X1)                          0.04       1.20 r
+  U541/Y (INVX1)                           0.02       1.22 f
+  U726/Y (OAI21X1)                         0.03       1.25 r
+  U727/Y (MUX2X1)                          0.04       1.29 f
+  U728/Y (AOI22X1)                         0.04       1.32 r
+  U287/Y (BUFX2)                           0.03       1.36 r
+  U285/Y (INVX1)                           0.01       1.37 f
+  U286/Y (INVX1)                           0.00       1.37 r
+  stage2_prod_reg[10]/D (DFFSR)            0.00       1.37 r
+  data arrival time                                   1.37
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  stage2_prod_reg[10]/CLK (DFFSR)          0.00       4.75 r
+  library setup time                      -0.07       4.68
+  data required time                                  4.68
+  -----------------------------------------------------------
+  data required time                                  4.68
+  data arrival time                                  -1.37
+  -----------------------------------------------------------
+  slack (MET)                                         3.31
+
+
+  Startpoint: pushin (input port clocked by clk)
+  Endpoint: stage1_mb_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.60       0.60 f
+  pushin (in)                              0.00       0.60 f
+  U203/Y (BUFX2)                           0.03       0.63 f
+  U581/Y (INVX1)                           0.23       0.86 r
+  U582/Y (INVX1)                           0.23       1.09 f
+  U652/Y (AOI22X1)                         0.10       1.20 r
+  U245/Y (BUFX2)                           0.03       1.23 r
+  U243/Y (INVX1)                           0.01       1.24 f
+  U244/Y (INVX1)                           0.00       1.24 r
+  stage1_mb_reg[0]/D (DFFSR)               0.00       1.24 r
+  data arrival time                                   1.24
+
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (ideal)              0.00       5.00
+  clock uncertainty                       -0.25       4.75
+  stage1_mb_reg[0]/CLK (DFFSR)             0.00       4.75 r
+  library setup time                      -0.07       4.68
+  data required time                                  4.68
+  -----------------------------------------------------------
+  data required time                                  4.68
+  data arrival time                                  -1.24
+  -----------------------------------------------------------
+  slack (MET)                                         3.44
+
+
+1
+write -hierarchy -format verilog -output fpm_gates.v
+Writing verilog file '/home/015698059@SJSUAD.SJSU.EDU/ee272/hw1U/fpm_gates.v'.
+1
+quit
+
+Memory usage for this session 130 Mbytes.
+Memory usage for this session including child processes 130 Mbytes.
+CPU usage for this session 3 seconds ( 0.00 hours ).
+Elapsed time for this session 5 seconds ( 0.00 hours ).
+
+Thank you...
