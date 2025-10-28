@@ -1,1 +1,70 @@
-hello
+module fpm(
+  input        clk,
+  input        reset,
+  input  [11:0] A,
+  input  [11:0] B,
+  input        pushin,
+  output reg   pushout,
+  output reg [11:0] Z
+);
+
+  always @(posedge clk or posedge reset) begin
+    if (reset) begin
+      pushout <= 1'b0;
+      Z       <= 12'b0;
+    end else begin
+      pushout <= pushin;
+      if (pushin) Z <= mul_fp12(A, B);
+    end
+  end
+
+  // Combinational multiply in homework format
+  function [11:0] mul_fp12;
+    input [11:0] a, b;
+
+    // declarations first
+    logic sa, sb, s, norm, round_up;
+    logic [4:0] ea, eb;
+    logic [5:0] fa, fb, frac_r;
+    logic [6:0] ma, mb;
+    logic [13:0] prod;
+    integer E;
+
+    begin
+      // Unpack
+      sa = a[11];  ea = a[10:6];  fa = a[5:0];
+      sb = b[11];  eb = b[10:6];  fb = b[5:0];
+
+      // Zero detect -> true
+      if ((ea==0 && fa==0) || (eb==0 && fb==0)) begin
+        mul_fp12 = 12'b0;
+      end else begin
+        // sign + hidden-1 mantissas
+        s  = sa ^ sb;
+        ma = {1'b1, fa};
+        mb = {1'b1, fb};
+
+        // 7x7 multiply and normalize
+        prod = ma * mb;           // 14 bits
+        norm = prod[13];          // >= 2.0 ?
+        E    = ea + eb - 15 + (norm ? 1 : 0);
+
+  if (norm) begin
+  frac_r = prod[12:7];   // take top 6 bits
+end else begin
+  frac_r = prod[11:6];
+end
+
+
+        // clamp and underflow
+        if (E < 2)
+          mul_fp12 = 12'b0;
+        else if (E > 30 || (E==30 && frac_r > 6'b110000))
+          mul_fp12 = {s, 5'b11110, 6'b110000};
+        else
+          mul_fp12 = {s, E[4:0], frac_r};
+      end
+    end
+  endfunction
+endmodule
+
