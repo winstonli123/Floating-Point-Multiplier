@@ -1,0 +1,132 @@
+module fpm(
+  input  logic        clk,
+  input  logic        reset,
+  input  logic [11:0] A,
+  input  logic [11:0] B,
+  input  logic        pushin,
+  output logic        pushout,
+  output logic [11:0] Z
+);
+
+  // stage 1 regs
+  logic        stage1_valid;
+  logic        stage1_s;
+  logic [5:0]  stage1_ea, stage1_eb;
+  logic [6:0]  stage1_ma, stage1_mb;
+  logic        stage1_zero;
+
+  //stage 2 regs
+  logic        stage2_valid;
+  logic        stage2_s;
+  logic [5:0]  stage2_ea, stage2_eb;
+  logic [13:0] stage2_prod;
+  logic        stage2_zero;
+
+  //stage 3 output (directly to Z and pushout)
+
+  // Stage 1: unpack and prepare ops
+
+  always_ff @(posedge clk or posedge reset) begin
+    if (reset) begin
+      stage1_valid <= 1'b0;
+      stage1_s     <= 1'b0;
+      stage1_ea    <= 6'b0;
+      stage1_eb    <= 6'b0;
+      stage1_ma    <= 7'b0;
+      stage1_mb    <= 7'b0;
+      stage1_zero  <= 1'b0;
+    end else begin
+      stage1_valid <= pushin;
+      
+      if (pushin) begin
+        // unpack inputs
+        automatic logic sa = A[11];
+        automatic logic sb = B[11];
+        automatic logic [5:0] ea = A[10:6];
+        automatic logic [5:0] eb = B[10:6];
+        automatic logic [5:0] fa = A[5:0];
+        automatic logic [5:0] fb = B[5:0];
+        
+        // check for zero 
+        stage1_zero <= ((ea == 6'b0 && fa == 6'b0) || 
+                        (eb == 6'b0 && fb == 6'b0));
+   
+        stage1_s <= sa ^ sb;
+      
+        stage1_ea <= ea;
+        stage1_eb <= eb;
+        
+        //hidden 1 to mantissas
+        stage1_ma <= {1'b1, fa};
+        stage1_mb <= {1'b1, fb};
+      end
+    end
+  end
+
+  // stage 2: multiplication
+  always_ff @(posedge clk or posedge reset) begin
+    if (reset) begin
+      stage2_valid <= 1'b0;
+      stage2_s     <= 1'b0;
+      stage2_ea    <= 6'b0;
+      stage2_eb    <= 6'b0;
+      stage2_prod  <= 14'b0;
+      stage2_zero  <= 1'b0;
+    end else begin
+      stage2_valid <= stage1_valid;
+      
+      if (stage1_valid) begin
+        stage2_s    <= stage1_s;
+        stage2_ea   <= stage1_ea;
+        stage2_eb   <= stage1_eb;
+        stage2_zero <= stage1_zero;
+        
+        // 7x7
+        stage2_prod <= stage1_ma * stage1_mb;
+      end
+    end
+  end
+
+  // stage 3: normalize, round, and pack result
+  always_ff @(posedge clk or posedge reset) begin
+    if (reset) begin
+      pushout <= 1'b0;
+      Z       <= 12'b0;
+    end else begin
+      pushout <= stage2_valid;
+      
+      if (stage2_valid) begin
+        if (stage2_zero) begin
+          Z <= 12'b0;
+        end else begin
+          automatic logic norm = stage2_prod[13];
+          automatic logic [5:0] frac_r;
+          automatic logic signed [6:0] E;
+          
+          // zexponent with normalization adjustment
+          E = signed'(7'(stage2_ea)) + signed'(7'(stage2_eb)) - 7'sd15 + (norm ? 7'sd1 : 7'sd0);
+          
+          // fraction based on normalization
+          if (norm) begin
+            frac_r = stage2_prod[12:7];  // shift right by 1
+          end else begin
+            frac_r = stage2_prod[11:6];  // No shift
+          end
+          
+          // underflow, overflow, and normal case
+          if (E < 7'sd2) begin
+            // underflow to zero
+            Z <= 12'b0;
+          end else if (E > 7'sd30 || (E == 7'sd30 && frac_r > 6'b110000)) begin
+            // overflow to max value
+            Z <= {stage2_s, 5'b11110, 6'b110000};
+          end else begin
+            // Normal result
+            Z <= {stage2_s, E[4:0], frac_r};
+          end
+        end
+      end
+    end
+  end
+
+endmodule
