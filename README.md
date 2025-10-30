@@ -34,3 +34,5 @@ Your first version computes the multiplication combinationally in one clock cycl
 
 There needs to be pipeline so errors dont occur with everything trying to be crammed into one clockcycle
 3 stage pipeline was implemented
+**Where can this be used **
+A floating point multipler can be used in DSP applicaitons and AI applicaitons where Floating Point Operatiosn are executed aka FLOPs.
