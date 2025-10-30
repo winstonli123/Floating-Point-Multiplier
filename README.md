@@ -30,7 +30,7 @@ Your first version computes the multiplication combinationally in one clock cycl
 
 - Stage 3: Normalizes, handles special cases, packs the result
 
-Simualtion vs Synthesis
+**Simualtion vs Synthesis**:
 
 There needs to be pipeline so errors dont occur with everything trying to be crammed into one clockcycle
 3 stage pipeline was implemented
